@@ -21,7 +21,7 @@ cnopts.hostkeys = None
     :return: path of the directory where the csv files where copied to
     """
 def get_files_from_host():
-    with pysftp.Connection(host=csv_host, username=csv_username, password=csv_password, cnopts = cnopts) as sftp:
+    with pysftp.Connection(host=csv_host, username=csv_username, password=csv_password, cnopts=cnopts) as sftp:
         print("Connection succesfully stablished ... ")
         sftp.cwd(rempath)
         list_dir = sftp.listdir_attr()  # Returns sorted files list. (Sorted by SFTPAttribute.filename.)
