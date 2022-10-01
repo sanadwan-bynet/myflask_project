@@ -62,6 +62,7 @@ clone the [project](https://github.com/sanadwan-bynet/myflask_project.git).
 ![image](https://user-images.githubusercontent.com/112401895/193425078-7815f343-eea6-473b-91cb-aef3ca9c9849.png)
 
 /Home
+
 ![image](https://user-images.githubusercontent.com/112401895/193425095-8355c34a-57e8-4979-aeaf-76af1eadaea2.png)
 
 /attendance
