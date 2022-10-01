@@ -45,7 +45,7 @@ def insert_to_db(filename, conn, cursor):
     # filename = sys.argv[1]
     
     # read the csv file
-    empdata = pd.read_csv(filename, encoding='utf-16', engine='python', sep='\t')
+    empdata = pd.read_csv(filename, encoding="utf-16", sep="\t")
     
     # connect to MySQL server and get an instance of a cursor
     

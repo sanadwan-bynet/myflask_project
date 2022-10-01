@@ -265,7 +265,7 @@ def add_avg_time(df, sum_max):
     avg = {}
     i = 0
     for idx in df.index:
-        avg[idx] = str((sum_row.iloc[i, 0] / sum_max) * 100) + " %"
+        avg[idx] = str("{:.2f}".format((sum_row.iloc[i, 0] / sum_max) * 100)) + " %"
         i += 1
     df['average'] = df.index.map(avg)
     return df
@@ -290,7 +290,7 @@ def my_attendance():
     for csv in csv_files:
         # TODO: check if there is a better parsing for the rows in this code
         # print(csv)
-        insert_to_db(csv, conn, cursor)
+        # insert_to_db(csv, conn, cursor)
         new_df, max_row = add_csv(csv, init_dict, new_df)
         sum_maxes += max_row
         #TODO: get the data from MySQL into a CSV file from mysql_to_csv, add conn and cursor
@@ -301,7 +301,7 @@ def my_attendance():
     new_df.sort_index(axis=1, inplace=True)
     new_df = add_avg_time(new_df, sum_maxes)
     new_df = add_names(new_df, init_dict)
-    new_df.to_csv('attendance.csv', encoding="utf-16", sep="\t")
+    # new_df.to_csv('attendance.csv', encoding="utf-16", sep="\t")
     mysql_disconnect(conn, cursor)
     return new_df
     

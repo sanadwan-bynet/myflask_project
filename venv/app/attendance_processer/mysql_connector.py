@@ -34,6 +34,7 @@ def mysql_connect():
         return conn
     except MySQLdb.Error as e:
         print("Error while connecting to MySQL", e)
+        return e
   
 
 def mysql_disconnect(conn, cursor):

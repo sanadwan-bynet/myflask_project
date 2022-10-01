@@ -11,8 +11,8 @@ csv_username = os.environ.get('CSV_USERNAME')
 csv_password = os.environ.get('CSV_PASSWORD')
 
 cwd = os.getcwd()
-dirpath= cwd + '\\attendance_processer\\attendance_csv_files'
-rempath='/var/tmp/csv_files'
+dirpath= cwd + '/app/attendance_processer/attendance_csv_files/'
+rempath='/var/tmp/csv_files/'
 cnopts = pysftp.CnOpts()  
 cnopts.hostkeys = None    
 
@@ -23,6 +23,8 @@ cnopts.hostkeys = None
 def get_files_from_host():
     with pysftp.Connection(host=csv_host, username=csv_username, password=csv_password, cnopts=cnopts) as sftp:
         print("Connection succesfully stablished ... ")
+        print(dirpath)
+        print(rempath)
         sftp.cwd(rempath)
         list_dir = sftp.listdir_attr()  # Returns sorted files list. (Sorted by SFTPAttribute.filename.)
         for attribute in list_dir:
