@@ -2,10 +2,7 @@ version: '3.4'
 
 services:
   web:
-    image: 'flask_ducker'
-    build: 
-      context: .
-      dockerfile: ./Dockerfile
+    image: sanadwan/flask_ducker:latest
     container_name: flask
     env_file:
       - ./.env
